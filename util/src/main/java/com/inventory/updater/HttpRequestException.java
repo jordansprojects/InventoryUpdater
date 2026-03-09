@@ -9,13 +9,19 @@ package com.inventory.updater;
  * @author jordan
  */
 public class HttpRequestException extends Exception {
+
     private final int statusCode;
-    private final String responseBody;
+    private String responseBody;
 
     public HttpRequestException(int statusCode, String responseBody) {
         super("HTTP request failed with status " + statusCode);
         this.statusCode = statusCode;
         this.responseBody = responseBody;
+    }
+
+    public HttpRequestException(int statusCode) {
+        super("HTTP request failed with status " + statusCode);
+        this.statusCode = statusCode;
     }
 
     public int getStatusCode() {

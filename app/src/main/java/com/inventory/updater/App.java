@@ -3,9 +3,6 @@
  */
 package com.inventory.updater;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 
 
 public class App { // App contains only core application logic : https://docs.gradle.org/current/userguide/best_practices_structuring_builds.html

@@ -1,3 +1,5 @@
+
+# copied from here: https://github.com/github/gitignore/blob/main/Gradle.gitignore
 .gradle
 **/build/
 !**/src/**/build/
@@ -11,20 +13,6 @@ gradle-app.setting
 # Avoid ignore Gradle wrappper properties
 !gradle-wrapper.properties
 
-
-# Gradle build directories and cache
-.gradle/
-/build/
-
-# Ignore Gradle GUI config
-gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle/wrapper/gradle-wrapper.jar
-
-# Cache of project
-.gradletasknamecache
-
 # Cache of project
 .gradletasknamecache
 
@@ -34,7 +22,5 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
-
-# Ignore properties files to avoid pushing sensitive info
+#ignore my properties files
 *.properties
-*/build/reports/*

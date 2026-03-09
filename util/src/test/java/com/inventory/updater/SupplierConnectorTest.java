@@ -20,8 +20,7 @@ public class SupplierConnectorTest {
     @Test
     void testGetProductList() throws URISyntaxException, IOException, InterruptedException, HttpRequestException{
         SupplierConnector con = new SupplierConnector();
-        String productList = con.getProductsList();
-        Assertions.assertNotNull(productList);
+        con.getProductsList();
     }
     
     

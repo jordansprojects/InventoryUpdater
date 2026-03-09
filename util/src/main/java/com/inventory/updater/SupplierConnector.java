@@ -9,7 +9,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-
+import java.nio.file.Paths;
+import java.nio.file.Path;
 /**
  *
  * @author jordan
@@ -21,21 +22,18 @@ public class SupplierConnector extends Connector {
     }
 
     // TODO: possibly move some of this code into Connector class
-    protected String getProductsList() throws URISyntaxException, IOException, InterruptedException, HttpRequestException {
+    protected void getProductsList() throws URISyntaxException, IOException, InterruptedException, HttpRequestException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI("https", this.url, "/json", null)) //TODO: make file type configurable
                 .header("Content-Type", "application/x-www-form-urlencoded")
                 .GET().build();
-        HttpResponse<String> response
-                = client.send(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<Path> response
+                = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(System.getProperty("user.home"), "Downloads/test-products.json")));
 
         if (response.statusCode() > 299 || response.statusCode() < 200) {
-            throw new HttpRequestException(response.statusCode(), response.body());
+            throw new HttpRequestException(response.statusCode());
         }
-        
-        // TODO: Download file
-        
-        return response.body();
+        System.out.println("File downloaded to: " + response.body());
         
     }
 }
