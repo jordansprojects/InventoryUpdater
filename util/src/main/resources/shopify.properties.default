@@ -1,0 +1,4 @@
+# Remove the .default extension on this file and update the values below
+secret=YOUR_SECRET_GOES_HERE
+id=YOUR_ID_GOES_HERE
+url=URL_TO_SHOPIFY_STORE_HERE

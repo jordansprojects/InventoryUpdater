@@ -12,3 +12,4 @@ plugins {
 
 rootProject.name = 'InventoryUpdater'
 include('app')
+include('util')
